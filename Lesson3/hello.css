@@ -1,0 +1,27 @@
+
+
+.top-div{
+  display:flex;
+}
+
+
+.green-bacgound{
+  background-color: aquamarine;
+}
+
+.fake-button{
+  border: black;
+  border-style: solid;
+  border-width: thin;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: lightgrey;
+  width: fit-content;
+}
+
+
+.fake-button:hover{ 
+  padding: 0.75rem;
+  color: blue;
+  cursor: pointer;
+}
