@@ -2,6 +2,8 @@
 
 .top-div{
   display:flex;
+  ;
+  
 }
 
 
@@ -10,13 +12,17 @@
 }
 
 .fake-button{
+
   border: black;
   border-style: solid;
   border-width: thin;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   background-color: lightgrey;
-  width: fit-content;
+  width: 40rem;
+  border-top-right-radius:2rem;
+  border-bottom-right-radius:2rem;   
+
 }
 
 
@@ -25,3 +31,21 @@
   color: blue;
   cursor: pointer;
 }
+
+#one{
+background-color: green;
+border-top-left-radius:2rem;
+border-bottom-left-radius:2rem;
+
+
+
+}
+#five{
+background-color: red;
+
+}
+
+*:before, *:after {
+  box-sizing: border-box;}
+
+  
