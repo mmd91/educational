@@ -1,9 +1,23 @@
 
 
 .top-div{
-  display:flex;
-  ;
-  
+  display:flex; 
+}
+
+.fake-button:nth-child(1) {
+  background-color: green;
+  border-top-left-radius:2rem;
+  border-bottom-left-radius:2rem;
+}
+
+
+.fake-button:last-child{
+  background-color: red;
+}
+
+
+.fake-button:nth-child(even){
+  background-color: blue;
 }
 
 
@@ -32,7 +46,7 @@
   cursor: pointer;
 }
 
-#one{
+/* .one{
 background-color: green;
 border-top-left-radius:2rem;
 border-bottom-left-radius:2rem;
@@ -43,7 +57,7 @@ border-bottom-left-radius:2rem;
 #five{
 background-color: red;
 
-}
+} */
 
 *:before, *:after {
   box-sizing: border-box;}
