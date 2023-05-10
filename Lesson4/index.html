@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>AJAX callout</h2>
+    <p>Response:</p>
+
+    <p id="outpt"></p>
+
+    <script>     
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          document.getElementById("outpt").innerHTML = this.responseText;
+        };
+        xhttp.open(
+          "GET",
+          "https://services.odata.org/TripPinRESTierService/People",
+          true
+        );
+        xhttp.send();     
+    </script>
+  </body>
+</html>

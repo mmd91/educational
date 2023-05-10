@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p id="demo">Fetch a file to change this text.</p>
+
+    <script>
+      go();
+
+      async function go() {
+        try {
+          let myObject = await fetch(
+            "https://services.odata.org/TripPinRESTierService/People"
+          );
+          let myText = await myObject.text();
+          document.getElementById("demo").innerHTML = myText;
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    </script>
+  </body>
+</html>
