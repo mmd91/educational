@@ -10,14 +10,17 @@
     <h1>Home assignment</h1>
     <div id="buttons"></div>
     <script>
-      var data = {
-        name: "John Smith",
-        age: 35,
-        email: "john.smith@example.com",
-        colors: ["blue", "green", "red", "yellow", "purple"],
-      };
+      var data =
+        '{"name": "John Smith","age": 35, "email": "john.smith@example.com","colors": ["blue", "green", "red", "yellow", "purple"]}';
       var output = JSON.parse(data);
-      console.log(output);
+      const colors = output.colors;
+      const buttonsDiv = document.getElementById("buttons");
+
+      colors.forEach((colors) => {
+        const button = document.createElement("button");
+        button.textContent = colors;
+        buttonsDiv.appendChild(button);
+      });
     </script>
   </body>
 </html>
