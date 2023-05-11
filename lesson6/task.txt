@@ -1,3 +1,3 @@
 1. write html page that uses js script
-2. inside js script create json object with at least proprty-array that has 5 strings
+2. inside js script create json object with at least property-array that has 5 strings
 3. iterate this array and create button for each array elemet using array value as a label
