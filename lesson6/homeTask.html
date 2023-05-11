@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="homeTask.css" />
   </head>
   <body>
     <h1>Home assignment</h1>
@@ -12,6 +13,7 @@
     <script>
       var data =
         '{"name": "John Smith","age": 35, "email": "john.smith@example.com","colors": ["blue", "green", "red", "yellow", "purple"]}';
+
       var output = JSON.parse(data);
       const colors = output.colors;
       const buttonsDiv = document.getElementById("buttons");
@@ -19,6 +21,9 @@
       colors.forEach((colors) => {
         const button = document.createElement("button");
         button.textContent = colors;
+        button.addEventListener("click", () => {
+          alert("Button was clicked");
+        });
         buttonsDiv.appendChild(button);
       });
     </script>

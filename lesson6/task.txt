@@ -1,3 +1,5 @@
 1. write html page that uses js script
 2. inside js script create json object with at least property-array that has 5 strings
 3. iterate this array and create button for each array elemet using array value as a label
+
+4. Add click handler to button and show message 'Button was clicked'

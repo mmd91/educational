@@ -1,0 +1,7 @@
+#buttons :hover{
+cursor: pointer;
+border-color: black;
+border-radius: 5px;
+font-size: medium;
+
+}
