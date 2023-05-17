@@ -29,13 +29,9 @@
       colors.forEach((color) => {
         const buttonEl = document.createElement("button");
         buttonEl.textContent = color.label;
+        buttonEl.dataset.id = color.id;
         buttonEl.addEventListener("click", (ev) => {
-          let btnColorText = ev.currentTarget.textContent;
-
-          let selectColor = data.colors.find((color)=>color.label == btnColorText);
-          if (selectColor){
-                    alert(selectColor.id + " button was clicked");
-          }
+          alert(ev.currentTarget.dataset.id + " button was clicked");
         });
 
         buttonsDiv.appendChild(buttonEl);
