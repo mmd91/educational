@@ -6,12 +6,12 @@
     <script>
       go();
 
-      async function go() {
+      function go() {
         try {
           let myObject = await fetch(
-            "https://services.odata.org/TripPinRESTierService/People"
+           "http://services.odata.org/TripPinRESTierService/(S(3mslpb2bc0k5ufk24olpghzx))/People"
           );
-          let myText = await myObject.text();
+          let myText = myObject.text();
           document.getElementById("demo").innerHTML = myText;
         } catch (err) {
           console.log(err);

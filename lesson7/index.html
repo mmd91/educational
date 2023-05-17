@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>AJAX callout</h2>
+    <p>Response:</p>
+
+    <p id="outpt"></p>
+
+    <script>     
+        const xhttp = new XMLHttpRequest();      
+        xhttp.onload = handleLoad;
+        xhttp.open(
+          "GET",
+          "http://127.0.0.1:5500/lesson4/People.json",
+          true
+        );
+        xhttp.send();     
+
+
+        console.log('send');
+
+        function handleLoad(event){
+              let data  = event.currentTarget.responseText;
+              console.log(data);
+
+//parse it and show buttons with user last name
+
+//show UserName on click
+
+
+        }
+
+    </script>
+
+   
+  </body>
+</html>
