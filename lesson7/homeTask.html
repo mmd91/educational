@@ -15,16 +15,27 @@
         name: "John Smith",
         age: 35,
         email: "john.smith@example.com",
-        colors: ["blue", "green", "red", "yellow", "purple"],
+        colors: [
+          { id: 1, label: "blue" },
+          { id: 2, label: "green" },
+          { id: 3, label: "red" },
+          { id: 4, label: "yellow" },
+          { id: 5, label: "purple" },
+        ],
       };
       const colors = data.colors;
       const buttonsDiv = document.getElementById("buttons");
 
       colors.forEach((color) => {
         const buttonEl = document.createElement("button");
-        buttonEl.textContent = color;
+        buttonEl.textContent = color.label;
         buttonEl.addEventListener("click", (ev) => {
-          alert(ev.currentTarget.textContent + " button was clicked");
+          let btnColorText = ev.currentTarget.textContent;
+
+          let selectColor = data.colors.find((color)=>color.label == btnColorText);
+          if (selectColor){
+                    alert(selectColor.id + " button was clicked");
+          }
         });
 
         buttonsDiv.appendChild(buttonEl);
