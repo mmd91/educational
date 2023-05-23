@@ -5,33 +5,43 @@
     <p>Response:</p>
 
     <p id="outpt"></p>
+    <div id="buttons"></div>
 
-    <script>     
-        const xhttp = new XMLHttpRequest();      
-        xhttp.onload = handleLoad;
-        xhttp.open(
-          "GET",
-          "http://127.0.0.1:5500/lesson4/People.json",
-          true
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = handleLoad;
+      xhttp.open("GET", "http://127.0.0.1:5500/lesson4/People.json", true);
+      xhttp.send();
+
+      console.log("send");
+
+      function handleLoad(event) {
+        let data = event.currentTarget.responseText;
+        console.log(data);
+
+        //parse it and show buttons with user last name
+        //show UserName on click
+        var buttonsContainer = document.getElementById("buttons");
+        data = JSON.parse(data);
+        data.value.forEach((record) => {
+          var button = document.createElement("button");
+          button.textContent = record.LastName;
+          button.dataset.username = record.UserName;
+          button.dataset.firstname = record.FirstName;
+          button.onclick = handleButtonClick;
+          buttonsContainer.appendChild(button);
+        });
+      }
+
+      function handleButtonClick(event) {
+        alert(
+          event.currentTarget.textContent +
+            " Button clicked for: " +
+            event.currentTarget.dataset.username
         );
-        xhttp.send();     
-
-
-        console.log('send');
-
-        function handleLoad(event){
-              let data  = event.currentTarget.responseText;
-              console.log(data);
-
-//parse it and show buttons with user last name
-
-//show UserName on click
-
-
-        }
-
+        //event.currentTarget.....
+        //  alert(record.LastName + "Button clicked for : " + record.UserName);
+      }
     </script>
-
-   
   </body>
 </html>
