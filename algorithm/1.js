@@ -3,6 +3,8 @@
 //target = 8;
 
 
+
+
 var search = function(nums, target) {
   
     let midArrIdx = Math.round(nums.length/2);//7
