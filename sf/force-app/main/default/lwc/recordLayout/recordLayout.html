@@ -2,7 +2,48 @@
     <div >
         <h1><b>Record ID is:</b> {recordId}</h1>
         <h1><b>Object is:</b> {objectApiName} </h1>
+        <h1>{flexipageRegionWidth}</h1>
+    </div>
+ 
+   
+    <h2 id="element-with-table-label1" class="slds-text-heading_medium slds-m-bottom_xx-small">Table of fields V1:</h2>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={col}>
+
+        </lightning-datatable>
     </div>
 
+  
+  
+    <h2 id="element-with-table-label" class="slds-text-heading_medium slds-m-bottom_xx-small">Table of fields V2:</h2>
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+      <thead>
+        <tr class="slds-line-height_reset">
+          <th>
+            <div class="slds-truncate" title="Field Nam">Field </div>
+          </th>
+          <th>
+            <div class="slds-truncate" title="Value">Value</div>
+          </th>
+         
+        </tr>
+      </thead>
+      <tbody>
+            <template for:each={data} for:item="field">
+                <tr key={field.apiName} class="slds-hint-parent">
+                    <td> {field.apiName}</td>
+                    <td>{field.value}</td>
+                   
+                 </tr> 
+              
+            </template>
+        
+       
+      </tbody>
+    </table>
     
 </template>
