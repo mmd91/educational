@@ -5,12 +5,16 @@
         <h1>{flexipageRegionWidth}</h1>
     </div>
  
-   
+    <div class="slds-p-around_medium">
+        <lightning-input type="text" label="Quick search" placeholder="type field name" onchange={handleChange}></lightning-input>
+    </div>
+        {local}
+
     <h2 id="element-with-table-label1" class="slds-text-heading_medium slds-m-bottom_xx-small">Table of fields V1:</h2>
     <div style="height: 300px;">
         <lightning-datatable
                 key-field="id"
-                data={data}
+                data={filteredData}
                 columns={col}>
 
         </lightning-datatable>

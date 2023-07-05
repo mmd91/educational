@@ -3,7 +3,7 @@ import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 
 const columns = [
-    { label: 'Label', fieldName: 'name' },
+    { label: 'Label', fieldName: 'apiName' },
     { label: 'Value', fieldName: 'value' },
     
 ];
@@ -17,7 +17,7 @@ export default class RecordLayout extends LightningElement {
     objectInfo = {};
     objectInfoFields = [];
     objectFieldNames = [];
-    
+
     col = columns;
    
 
@@ -59,7 +59,21 @@ export default class RecordLayout extends LightningElement {
         this.data = filedsWithValues;
     }
 
-
+    filterValue = '';
+    handleChange(event) {
+        this.filterValue = event.detail.value;
+    }
   
+    
+    get filteredData(){
+        if (this.filterValue){
+            return this.data.filter(item=>item.apiName.toLowerCase().includes(this.filterValue.toLowerCase()));
+        } else {
+            return this.data;
+        }
+       
+    }
+
+    
    
 }
