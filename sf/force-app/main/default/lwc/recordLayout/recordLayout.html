@@ -15,9 +15,12 @@
         <lightning-datatable
                 key-field="id"
                 data={filteredData}
-                columns={col}>
-
+                columns={col}
+                onsave={handleSave}
+                draft-values={draftValues}
+                >
         </lightning-datatable>
+         
     </div>
 
   
