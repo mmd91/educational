@@ -24,5 +24,6 @@ export default class AlertWithDataContact extends LightningElement {
     showAlert() {
         const message = `Last Modified By ID: ${this.lastModifiedById}\nLast Modified Date: ${this.lastModifiedDate}`;
     window.alert(message);
+    console.log('alert')
     }
 }
