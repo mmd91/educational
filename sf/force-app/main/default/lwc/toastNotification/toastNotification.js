@@ -2,7 +2,7 @@ import { LightningElement, api, wire } from "lwc";
 import { getRecord, getFieldValue } from "lightning/uiRecordApi";
 
 import LAST_MODIFIED_DATE_FIELD from "@salesforce/schema/Contact.LastModifiedDate";
-import LAST_MODIFIED_BY_ID_FIELD from "@salesforce/schema/Contact.LastModifiedById";
+import LAST_MODIFIED_BY_NAME_FIELD from "@salesforce/schema/Contact.LastModifiedBy.Name";
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 // "Create action button that will show last modified date and last modified by.
@@ -10,7 +10,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 //When between 1 day and 1 week - Yellow
 //All older - Red"
 
-const fields =[LAST_MODIFIED_DATE_FIELD, LAST_MODIFIED_BY_ID_FIELD];
+const fields =[LAST_MODIFIED_DATE_FIELD, LAST_MODIFIED_BY_NAME_FIELD];
 export default class AlertWithDataContact extends LightningElement {
     //Create action button that will show last modified date and last modified by
     
@@ -23,12 +23,12 @@ export default class AlertWithDataContact extends LightningElement {
     return getFieldValue(this.contact.data, LAST_MODIFIED_DATE_FIELD);
   }
 
-  get lastModifiedById() {
-    return getFieldValue(this.contact.data, LAST_MODIFIED_BY_ID_FIELD);
+  get lastModifiedByName() {
+    return getFieldValue(this.contact.data, LAST_MODIFIED_BY_NAME_FIELD);
   }
 
   get message() {
-    return `Last Modified By ID: ${this.lastModifiedById}\nLast Modified Date: ${this.lastModifiedDate}`;
+    return `Last Modified By ID: ${this.lastModifiedByName}\nLast Modified Date: ${this.lastModifiedDate}`;
     
 }
 getToastVariant() {
