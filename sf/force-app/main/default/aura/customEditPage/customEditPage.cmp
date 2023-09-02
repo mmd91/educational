@@ -1,4 +1,5 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride">
-   
- <c:task7CustomEditPage recordId="{!v.recordId}"></c:task7CustomEditPage>
+<aura:component
+  implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride"
+>
+  <c:task7CustomEditPage recordId="{!v.recordId}"></c:task7CustomEditPage>
 </aura:component>
