@@ -1,6 +1,6 @@
 import { LightningElement } from "lwc";
 
-export default class RadioGroupBasic extends LightningElement {
+export default class task12StandardRadioButtonComponent extends LightningElement {
   value = "";
 
   get options() {
