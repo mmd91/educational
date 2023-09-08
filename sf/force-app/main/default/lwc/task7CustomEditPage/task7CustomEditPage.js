@@ -21,16 +21,18 @@ export default class Task7CustomEditPage extends NavigationMixin(
   // Flexipage provides recordId and objectApiName
   @api recordId;
   @api objectApiName;
+
   contactId;
+
   handleSuccess(event) {
     this.contactId = event.detail.id;
     // Show a toast message
-    const eve = new ShowToastEvent({
+    const successToast = new ShowToastEvent({
       title: "Success",
       message: "Contact has been saved",
       variant: "success"
     });
-    this.dispatchEvent(eve);
+    this.dispatchEvent(successToast);
     // Navigate to the Contact page
     this[NavigationMixin.Navigate]({
       type: "standard__recordPage",
