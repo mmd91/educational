@@ -1,117 +1,31 @@
 <template>
-  <lightning-quick-action-panel header="Custom Toast">
-    <lightning-button variant="base" label="Success" onclick={handleOnClick}>
-    </lightning-button>
-  </lightning-quick-action-panel>
-
-  <div class="slds-notify_container slds-is-relative">
-    <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
-      <span class="slds-assistive-text">success</span>
-      <span
-        class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top"
-        title="Description of icon when needed"
+  <lightning-card title="Custom Toast Actions:">
+    <div
+      class="slds-col_bump-left slds-text-align_right slds-p-horizontal_x-small slds-text-align_center"
+    >
+      <lightning-button
+        variant="success"
+        label="Success Action"
+        class="slds-m-left_x-small slds-p-right_xx-small"
+        onclick={toastSuccess}
       >
-        <svg class="slds-icon slds-icon_small" aria-hidden="true">
-          <use
-            xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"
-          ></use>
-        </svg>
-      </span>
-      <div class="slds-notify__content">
-        <h2 class="slds-text-heading_small">Success <a href="#"></a></h2>
-      </div>
-      <div class="slds-notify__close">
-        <button
-          class="slds-button slds-button_icon slds-button_icon-inverse"
-          title="Close"
-        >
-          <svg
-            class="slds-button__icon slds-button__icon_large"
-            aria-hidden="true"
-          >
-            <use
-              xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"
-            ></use>
-          </svg>
-          <span class="slds-assistive-text">Close</span>
-        </button>
-      </div>
-    </div>
-  </div>
+      </lightning-button>
 
-  <div class="slds-notify_container slds-is-relative">
-    <div class="slds-notify slds-notify_toast slds-theme_info" role="status">
-      <span class="slds-assistive-text">info</span>
-      <span
-        class="slds-icon_container slds-icon-utility-info slds-m-right_small slds-no-flex slds-align-top"
-        title="Description of icon when needed"
+      <lightning-button
+        variant="brand"
+        label="Info Action"
+        class="slds-m-left_x-small slds-p-right_xx-small"
+        onclick={toastInfo}
       >
-        <svg class="slds-icon slds-icon_small" aria-hidden="true">
-          <use
-            xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#info"
-          ></use>
-        </svg>
-      </span>
-      <div class="slds-notify__content">
-        <h2 class="slds-text-heading_small">
-          Toast Info.
-          <a href="#">Select Leads to Merge</a>
-        </h2>
-      </div>
-      <div class="slds-notify__close">
-        <button
-          class="slds-button slds-button_icon slds-button_icon-inverse"
-          title="Close"
-        >
-          <svg
-            class="slds-button__icon slds-button__icon_large"
-            aria-hidden="true"
-          >
-            <use
-              xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"
-            ></use>
-          </svg>
-          <span class="slds-assistive-text">Close</span>
-        </button>
-      </div>
-    </div>
-  </div>
+      </lightning-button>
 
-  <div class="slds-notify_container slds-is-relative">
-    <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
-      <span class="slds-assistive-text">error</span>
-      <span
-        class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top"
-        title="Description of icon when needed"
+      <lightning-button
+        variant="destructive-text"
+        label="Error Action"
+        class="slds-m-left_x-small slds-p-right_xx-small"
+        onclick={toastError}
       >
-        <svg class="slds-icon slds-icon_small" aria-hidden="true">
-          <use
-            xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"
-          ></use>
-        </svg>
-      </span>
-      <div class="slds-notify__content">
-        <h2 class="slds-text-heading_small">
-          Can’t save lead “Sally Wong” because <a href="#">another lead</a> has
-          the same name.
-        </h2>
-      </div>
-      <div class="slds-notify__close">
-        <button
-          class="slds-button slds-button_icon slds-button_icon-inverse"
-          title="Close"
-        >
-          <svg
-            class="slds-button__icon slds-button__icon_large"
-            aria-hidden="true"
-          >
-            <use
-              xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"
-            ></use>
-          </svg>
-          <span class="slds-assistive-text">Close</span>
-        </button>
-      </div>
+      </lightning-button>
     </div>
-  </div>
+  </lightning-card>
 </template>
