@@ -7,13 +7,13 @@ export default class Task15CustomToastDuration extends LightningElement {
   @track variant;
   @track mode;
 
-  toastEventFire(title, msg, variant, mode) {
+  toastEventFire(title, msg, variant, mode, duration) {
     const toastEvent = new ShowToastEvent({
       title: title,
       message: msg,
       variant: variant,
       mode: mode,
-      duration: 3000
+      duration: duration
     });
     this.dispatchEvent(toastEvent);
   }
@@ -22,7 +22,14 @@ export default class Task15CustomToastDuration extends LightningElement {
     this.title = "SUCCESS";
     this.message = "Test toast message!";
     this.variant = "success";
-    this.mode = "dismissable";
-    this.toastEventFire(this.title, this.message, this.variant, this.mode);
+    this.mode = "dismissible";
+    const duration = 10000;
+    this.toastEventFire(
+      this.title,
+      this.message,
+      this.variant,
+      this.mode,
+      duration
+    );
   }
 }
