@@ -1,43 +1,49 @@
-import { LightningElement, track } from "lwc";
-import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import { LightningElement, api } from "lwc";
 
 export default class Task14CustomToastMessage extends LightningElement {
-  @track title;
-  @track message;
-  @track variant;
-  @track mode;
+  toastStyle = "";
+  toastMessage = '"This is a message"';
+  @api autoCloseTime = 5000;
+  closeTimeout;
 
-  toastEventFire(title, msg, variant, mode) {
-    const toastEvent = new ShowToastEvent({
-      title: title,
-      message: msg,
-      variant: variant,
-      mode: mode
-    });
-    this.dispatchEvent(toastEvent);
+  showSuccessToast() {
+    this.toastStyle = "success";
+    this.toastMessage = '"This is a success message"';
+    this.template.querySelector("c-task14-custom-toast").show();
   }
 
-  toastSuccess() {
-    this.title = "SUCCESS";
-    this.message = "Test toast message!";
-    this.variant = "success";
-    this.mode = "sticky";
-    this.toastEventFire(this.title, this.message, this.variant, this.mode);
+  showWarningToast() {
+    this.toastStyle = "warning";
+    this.toastMessage = '"This is a warning message"';
+    this.template.querySelector("c-task14-custom-toast").show();
+    this.setCloseTimeout();
   }
 
-  toastInfo() {
-    this.title = "INFO";
-    this.message = "Test toast message!";
-    this.variant = "info";
-    this.mode = "sticky";
-    this.toastEventFire(this.title, this.message, this.variant, this.mode);
+  showErrorToast() {
+    this.toastStyle = "error";
+    this.toastMessage = '"This is a error message"';
+    this.template.querySelector("c-task14-custom-toast").show();
   }
 
-  toastError() {
-    this.title = "ERROR";
-    this.message = "Test toast message!";
-    this.variant = "error";
-    this.mode = "sticky";
-    this.toastEventFire(this.title, this.message, this.variant, this.mode);
+  setCloseTimeout() {
+    // Clear the existing timeout if there is one
+    // if (this.closeTimeout) {
+    //   clearTimeout(this.closeTimeout);
+    // }
+
+    // Set a new timeout to close the toast
+
+    let _self = this;
+
+    setTimeout(() => {
+      _self.template.querySelector("c-task14-custom-toast").closeToast();
+      // _self.showErrorToast();
+    }, 3000);
+
+    // this.closeTimeout = setTimeout(this.closeToast, 3000);
+  }
+
+  @api closeToast() {
+    this.template.querySelector("c-task14-custom-toast").closeToast();
   }
 }

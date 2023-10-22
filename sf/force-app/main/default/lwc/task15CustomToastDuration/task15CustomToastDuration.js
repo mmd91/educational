@@ -22,7 +22,7 @@ export default class Task15CustomToastDuration extends LightningElement {
     this.title = "SUCCESS";
     this.message = "Test toast message!";
     this.variant = "success";
-    this.mode = "dismissible";
+    this.mode = "sticky";
     const duration = 10000;
     this.toastEventFire(
       this.title,

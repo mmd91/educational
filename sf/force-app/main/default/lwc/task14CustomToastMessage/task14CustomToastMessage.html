@@ -3,29 +3,31 @@
     <div
       class="slds-col_bump-left slds-text-align_right slds-p-horizontal_x-small slds-text-align_center"
     >
+      <c-task14-custom-toast
+        message={toastMessage}
+        type={toastStyle}
+      ></c-task14-custom-toast>
+
       <lightning-button
         variant="success"
         label="Success Action"
-        class="slds-m-left_x-small slds-p-right_xx-small"
-        onclick={toastSuccess}
-      >
-      </lightning-button>
+        class="firstBtn"
+        onclick={showSuccessToast}
+      ></lightning-button>
 
       <lightning-button
-        variant="brand"
-        label="Info Action"
-        class="slds-m-left_x-small slds-p-right_xx-small"
-        onclick={toastInfo}
-      >
-      </lightning-button>
+        variant="warning"
+        label="Warning Action"
+        class="slds-m-left_x-small slds-p-right_xx-small secondBtn"
+        onclick={showWarningToast}
+      ></lightning-button>
 
       <lightning-button
-        variant="destructive-text"
+        variant="error"
         label="Error Action"
-        class="slds-m-left_x-small slds-p-right_xx-small"
-        onclick={toastError}
-      >
-      </lightning-button>
+        class="slds-m-left_x-small slds-p-right_xx-small thirdBtn"
+        onclick={showErrorToast}
+      ></lightning-button>
     </div>
   </lightning-card>
 </template>

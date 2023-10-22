@@ -1,0 +1,11 @@
+<template>
+  <div class="custom-toast" if:true={toastVisible}>
+    <div class="slds-notify_container slds-is-relative">
+      <div class={toastClass} role="status">
+        <div class="toast-message">{message}</div>
+
+        <button class="close-button" onclick={closeToast}>x</button>
+      </div>
+    </div>
+  </div>
+</template>

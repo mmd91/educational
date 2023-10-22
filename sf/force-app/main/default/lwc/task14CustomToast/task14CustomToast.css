@@ -1,0 +1,18 @@
+.custom-toast {
+    position: fixed;
+    top: 10rem;
+    left: 29rem;
+    z-index: 10000;
+  
+
+}
+.close-button {
+    background: none;
+    border: black;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 10px;
+   
+
+}
+
